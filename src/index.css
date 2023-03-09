@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.float {
+  animation: float-animation 2.5s infinite ease-in-out;
+}
+.img-clima{
+height:500px;
+width:500px;
+}
+  .screen-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    background-color: #f4a900 ;
+    margin-top: 300px;
+    font-size: 20px;
+    
+  }
+
+.weather-app {
+  background-color:#f4a900 ;
+  padding: 14px;
+  border-radius: 16px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+h3{
+  color:darkblue;
+}
+
+@keyframes float-animation {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5%);
+  }
+}
