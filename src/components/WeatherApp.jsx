@@ -5,7 +5,7 @@ const APIKey = "3d2857edfcc18fca2e122c14481c23a6";
 function WeatherApp() {
   const [data, setData] = useState(null);
   const [isCelsius, setIsCelsius] = useState(true);
-  const [city] = useState("Bogotá");
+  const [city] = useState("maracaibo");
   const [country, setCountry] = useState("");
   const [humidity, setHumidity] = useState("");
   const [windSpeed, setWindSpeed] = useState("");
