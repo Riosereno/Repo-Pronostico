@@ -13,7 +13,7 @@ function WeatherApp() {
   
 
   useEffect(() => {
-    const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`;
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
@@ -60,7 +60,7 @@ function WeatherApp() {
         </h1>
         <img
           className="absolute w-4/12 top-12 right-0 z-10"
-          src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
+          src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
           alt=""
         />
         <p>
