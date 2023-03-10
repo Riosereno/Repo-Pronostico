@@ -30,7 +30,9 @@ width:500px;
 h3{
   color:darkblue;
 }
-
+h1{
+  fontsize: 100px;
+}
 @keyframes float-animation {
   0%,
   100% {
