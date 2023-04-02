@@ -5,12 +5,11 @@ const APIKey = "3d2857edfcc18fca2e122c14481c23a6";
 function WeatherApp() {
   const [data, setData] = useState(null);
   const [isCelsius, setIsCelsius] = useState(true);
-  const [city] = useState("maracaibo");
+  const [city, setCity] = useState("maracaibo");
   const [country, setCountry] = useState("");
   const [humidity, setHumidity] = useState("");
   const [windSpeed, setWindSpeed] = useState("");
-    
-  
+  const [inputCity, setInputCity] = useState("");
 
   useEffect(() => {
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`;
@@ -26,6 +25,15 @@ function WeatherApp() {
 
   const toggleTemperatureUnit = () => {
     setIsCelsius(!isCelsius);
+  };
+
+  const handleInputCityChange = (event) => {
+    setInputCity(event.target.value);
+  };
+
+  const handleSearchClick = () => {
+    setCity(inputCity);
+    setInputCity("");
   };
 
   if (!data) {
@@ -52,6 +60,7 @@ function WeatherApp() {
     backgroundColor = "blue";
   }
   document.body.style.backgroundColor = backgroundColor;
+
   return (
     <div className="screen-container">
       <div className="weather-app">
@@ -74,6 +83,10 @@ function WeatherApp() {
         </div>
         <p>Humedad: {humidity}%</p>
         <p>Velocidad del viento: {windSpeed} km/h</p>
+        <div className="inputCiudad">
+          <input type="text" value={inputCity} onChange={handleInputCityChange} />
+          <button onClick={handleSearchClick}><h3>Buscar ciudad</h3></button>
+        </div>
       </div>
     </div>
   );
